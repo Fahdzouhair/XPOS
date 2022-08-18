@@ -1,0 +1,39 @@
+<div *ngIf="work ;then workBloc ; else learnBlock"></div>
+
+<ng-template #workBloc>
+    
+    <div class="dashboard-user-list">
+       <!--  <app-table [data]="tableData" [headers]="tableHeader"> </app-table>      -->
+        <app-table [data_]="tableToTest" [testString]="parentString"></app-table>
+   </div>
+</ng-template>
+
+<ng-template #learnBlock>
+        
+    <div *ngIf="hide ;then thenBlock ;else elseBlock"></div>
+
+        <ng-template #thenBlock>
+            <h2>then Block</h2>
+            <div [ngSwitch]="number">
+                <h2 *ngSwitchCase=1>1</h2>
+                <h2 *ngSwitchCase=2>2</h2>
+                <h2 *ngSwitchCase=3>3</h2>
+                <h2 *ngSwitchDefault>Pick again</h2>
+            </div>
+            <!-- ngForDirective -->
+            <div *ngFor="let color of colorTable ; index as i ; first as f ; even as e">
+                <h2>{{f}} {{e}} {{color + " " +i}}</h2> 
+            </div>
+        </ng-template>
+
+        <ng-template #elseBlock>
+            <input #myInput 
+                    [(ngModel)]="fromHtmltoClass"  
+                    type="text"/>
+
+            <button (click)="fire($event)">read</button>
+            <h2>{{ fromHtmltoClass }}</h2>
+        </ng-template >
+
+
+</ng-template>

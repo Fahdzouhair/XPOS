@@ -1,0 +1,38 @@
+<div class="transaction-container">
+
+    <div class="filter-by-date">
+        <div class="startDate">
+            <span class="Date">Start Date :</span>
+            <input type="date">
+        </div>
+        <div class="endDate">
+            <span class="Date Date2">End Date :</span>
+            <input type="date">
+        </div>
+        <button class="Submit">Submit</button>
+    </div>
+
+    <div class="more-option">
+
+        <div class="show-more">
+            <label>Show
+            <input placeholder="1" type="number" min=1 >
+            entries
+            </label>
+        </div>
+
+        <div class="searchBar">
+            <i class="fa-solid search-icon fa-search"></i>
+            <input class="search" placeholder="Search :" type="text">
+        </div>
+
+        
+  </div>
+   
+
+    <div class="transaction-table">
+        <app-table [data_]="tableData"></app-table>
+
+</div>
+
+

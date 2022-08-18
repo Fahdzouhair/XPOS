@@ -1,0 +1,24 @@
+<nav>
+    <div class="logo">
+        <img src="../../../assets/Logo_hps_0.png" width="80%" height="40%" alt="">
+    </div>
+
+    <div class="Sidebar">
+        <ul class="Sidebar-items">
+            
+            <li routerLink="/analytics" routerLinkActive="active"><i class="fa-solid icon fa-chart-line"></i>Analytics</li>
+            <li routerLink="/transactions" routerLinkActive="active" ><i class="fa-solid icon  fa-money-bill-1"></i>Transactions</li>
+            <li routerLink="/dashboard-user-list"  routerLinkActive="active" ><i class="fa-solid icon fa-users"></i>Dashboard User List</li>
+            <li><i class="fa-solid icon fa-user-plus"></i>Add Dashboard User</li>
+            <li><i class="fa-solid icon fa-ban"></i>Blocked Mobile Users</li>
+            <li><i class="fa-solid icon fa-circle"></i>Void Transaction</li>
+            <li><i class="fa-solid icon fa-file"></i>Transaction Report</li>
+            <li (click)="toggel()" class="toggel"><i class="fa-solid icon  fa-money-bill-1"></i>SMS Pay Transaction<i [class.rotate]="rotate" class="arrow icon fa-solid fa-angle-left"></i></li>
+            <ul [ngClass]="mesg" class="multilevel">
+                <li class="multiInside"><i class="fa-solid icon fa-ban"></i>Blocked Mobile Users</li>
+                <li class="multiInside"><i class="fa-solid icon fa-circle"></i>Void Transaction</li>
+            </ul>
+        </ul>
+    </div>
+</nav>
+
