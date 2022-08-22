@@ -32,7 +32,7 @@ export class TransactionsComponent implements OnInit {
   "No. Of Transactions": "ibrahim",
   "No. Of NonCard Transactions": "test",
   "Date of Last Transaction": "testhjjh",
-  "Dexlined Transactions": "bo9lwa"
+  "Dexlined Transactions": "bi3i"
 }
 ];
   constructor() { 

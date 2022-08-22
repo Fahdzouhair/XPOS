@@ -10,8 +10,7 @@ export class TableComponent implements OnInit {
   
 
   @Input()  data_:any =[] ;
-  @Input("testString") childString:string="";
-  @Input() testArr_:any = [];
+  
 
   public tableData = [];
 
@@ -28,20 +27,15 @@ export class TableComponent implements OnInit {
     //this.getData(this.data_);
   }
   ngOnChanges(changes: any): void {
-    console.log(changes);
+    //console.log(changes);
       if(changes?.data_?.currentValue ){
         this.getData(this.data_);
       }
       
   }
 
-  ngAfterViewInit(): void {
-    this.getData(this.data_);
-  }
 
-  ngafterView(): void {
-    this.getData(this.data_);
-  }
+
 
   public isEmptyData(){
     return this.tabKey.length ?  false : true;

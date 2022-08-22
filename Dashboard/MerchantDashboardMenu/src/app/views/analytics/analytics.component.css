@@ -14,25 +14,40 @@
     margin-bottom: 0;
 }
 
-input[type='date']{
+
+.month-filter{
+    padding:.4rem .9rem;
     background:#c2dfff;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+input[type='date']{
+    background:#2C3333;  
     border:none;
+    margin-left: .5rem;
     padding:.2rem .5rem;
     border-radius: 15px;
     font-size: .8rem;
     text-align:center;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: .9;
+}
+input[type="date"]:focus{
+    outline:none;
 }
 
 label{
-    color:#c2dfff;
+    color:#2C3333;
     margin-right:.5rem;
     vertical-align:baseline;
-    
+    font-weight: bold;
     padding:.2rem .5rem;
     font-size: .8rem;
-    border-bottom: 2px solid #ffffff26;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-bottom: 2px solid #2C3333;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .header-analytics > h4{

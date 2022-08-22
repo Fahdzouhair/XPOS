@@ -13,54 +13,16 @@ export class DashboardUserListComponent implements OnInit {
   public number:number = 1;
   public colorTable = ['red','yellow','green'];
 
-  public parentString:string = "latifa";
-  public ach = ["fahd","saif","latifa"];
- /*  public tableData = [
+  public tableData = [
     {
-      "User ID": "test",
-      "No. Of Batches": "ahmed",
-      "No. Of Transactions": "ibrahim",
-      "No. Of NonCard Transactions": "test",
-      "Date of Last Transaction": "testhjjh",
-      "Dexlined Transactions": "test7899"
-  },
-  {
-    "User ID": "ussef",
-    "No. Of Batches": "ahmed",
-    "No. Of Transactions": "ibrahim",
-    "No. Of NonCard Transactions": "test",
-    "Date of Last Transaction": "testhjjh",
-    "Dexlined Transactions": "test657"
-},
-{
-  "User ID": "test",
-  "No. Of Batches": "ahmed",
-  "No. Of Transactions": "ibrahim",
-  "No. Of NonCard Transactions": "test",
-  "Date of Last Transaction": "testhjjh",
-  "Dexlined Transactions": "test8209094"
-}
-];
- */
-
-public tableToTest = [
-  {
-    "username" : "fahd",
-    "email" : "fahd@example.com",
-    "role" : "user",
-  },
-  {
-    "username" : "fahd",
-    "email" : "fahd@example.com",
-    "role" : "user",
-  },
-  {
-    "username" : "fahd",
-    "email" : "fahd@example.com",
-    "role" : "user",
-  },
-]
-
+      "User Name": "test",
+      "Status ID": "ahmed",
+      "Edit Status ID": "ibrahim",
+      "Role": "test",
+      "Edit User": "testhjjh"
+    }
+  ];
+ 
 
   constructor() { }
 
