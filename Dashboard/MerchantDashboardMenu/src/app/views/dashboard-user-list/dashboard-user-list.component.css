@@ -61,11 +61,12 @@ input[type="number"]{
 }
 
 .search{
-    margin-left:.2rem;
+    margin: 0 !important;
     border:none;
     background:transparent;
     padding: .2rem .5rem;
     color:#fff;
+    
 }
 
 .search:focus{

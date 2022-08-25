@@ -128,11 +128,11 @@ input[type="number"]{
 }
 
 .search{
-    margin-left:.2rem;
     border:none;
     background:transparent;
     padding: .2rem .5rem;
     color:#fff;
+    margin:0 !important;
 }
 
 .search:focus{

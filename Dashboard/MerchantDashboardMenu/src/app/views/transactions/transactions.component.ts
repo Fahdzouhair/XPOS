@@ -9,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TransactionsComponent implements OnInit {
   
   
+  
   public tableData = [
     {
       "User ID": "test",

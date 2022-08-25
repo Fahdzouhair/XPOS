@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from '../app.component';
+import { AuthentificationComponent } from '../authentification/authentification.component';
 import { DashboardComponent } from '../dashboard/dashboard.component'
 import { AddDashboardUserComponent } from '../views/add-dashboard-user/add-dashboard-user.component';
 import { AnalyticsComponent } from '../views/analytics/analytics.component';
@@ -9,25 +10,34 @@ import { TransactionsComponent } from '../views/transactions/transactions.compon
 
 
 const routes: Routes = [
-
- 
   {
-    path: 'analytics',
-    component: AnalyticsComponent,
+    path:'dashboard',
+    component: DashboardComponent,
+    children: [
+      {
+        path: 'analytics',
+        component: AnalyticsComponent,
+      },
+      {
+        path: 'transactions',
+        component: TransactionsComponent,
+      },
+      {
+        
+        path: 'dashboard-user-list',
+        component: DashboardUserListComponent,
+      },
+      {
+        path:'add-dashboard-user',
+        component: AddDashboardUserComponent,
+      }
+    ]
   },
   {
-    path: 'transactions',
-    component: TransactionsComponent,
-  },
-  {
-    
-    path: 'dashboard-user-list',
-    component: DashboardUserListComponent,
-  },
-  {
-    path:'add-dashboard-user',
-    component: AddDashboardUserComponent,
+    path:'login',
+    component: AuthentificationComponent
   }
+  
  
   /*
   {

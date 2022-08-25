@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Chart, registerables} from 'chart.js';
 
 Chart.register(...registerables);
@@ -10,8 +10,7 @@ Chart.register(...registerables);
   styleUrls: ['./analytics.component.css']
 })
 export class AnalyticsComponent implements OnInit {
-  
-  
+
 
   constructor() { }
 
