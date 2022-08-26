@@ -16,15 +16,14 @@ export class DashboardComponent implements OnInit {
   myArray: any[] = [];
 
   constructor(private testService:TestService) {
-      
       }
 
   ngOnInit(): void {
+
     /* this.testService.getMerchants()
         .subscribe(merchants =>{
           this.myArray = merchants;
         })
         }; */
-      }
-      
+  }
 }

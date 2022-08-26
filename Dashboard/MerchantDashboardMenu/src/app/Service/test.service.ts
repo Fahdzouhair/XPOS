@@ -6,9 +6,11 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class TestService {
 
-  constructor(private afs: AngularFirestore) { }
+
+  constructor(private afs: AngularFirestore) { 
+  }
 
   getMerchants(){
-    return this.afs.collection('Merchants').valueChanges();
+    this.afs.collection('Merchants').valueChanges();
   }
 } 
