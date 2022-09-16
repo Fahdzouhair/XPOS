@@ -21,7 +21,7 @@ import { AppRoutingModule , routingComponent  } from './app-routing/app-routing.
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { NotFoundPageComponent } from './views/not-found-page/not-found-page.component';
-import { TestComponent } from './test/test.component';
+
 
 
 
@@ -36,8 +36,7 @@ import { TestComponent } from './test/test.component';
     TableComponent,
     AddDashboardUserComponent,
     AuthentificationComponent,
-    NotFoundPageComponent,
-    TestComponent
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
