@@ -1,22 +1,69 @@
-<div class="add-dashboard-user-Container">
+<div style="color:#fff" class="add-dashboard-user-Container">
 
-    <form action="" class="formCard">
-        <label for="">UserName</label>
-        <input type="text" placeholder="Username / Email ID" />
-        <label for="">First Name</label>
-        <input type="text" placeholder="First name" />
-        <label for="">Last Name</label>
-        <input type="text" placeholder="Last name" />
-        <label for="">Role</label>
-        <select name="" id="">
-            <option class="option selected" selected>Select Role</option>
-            <option  class="option" value="Role1">Role One</option>
-            <option class="option" value="Role2">Role two</option>
-        </select>
-
-        <div class="formAction">
-            <button class="sumbmit">Submit</button>
-            <button class="reset">Reset</button>
+    <div [class.d-none] ='!hide' class="formContainer">
+       
+        <form   [formGroup]="addUserForm" class="formCard">
+            <label for="" class="username">Username :</label>
+            <div formGroupName='user_name' class="nestedForm">
+                <label class="firstname" for="">First Name :</label>
+                <input type="text" formControlName="firstname" placeholder="First name" />
+                <label class="lastname" for="">Last Name :</label>
+                <input type="text" formControlName="lastname"  placeholder="Last name" />
+                <p *ngIf="user_name?.invalid && user_name?.touched" class="errMsg">The Username is invalid</p>
+            </div>
+            <label class="label" for="">User_code :</label>
+            <input type="text" formControlName="user_code" placeholder="User_code" />
+            <p *ngIf="user_code?.invalid && user_code?.touched" class="errMsg">This User Code is invalid</p>
+            <label class="label" for="">Password :</label>
+            <input type="password" formControlName="password" placeholder="Password" />
+            <p *ngIf="password?.invalid && password?.touched" class="errMsg">This Password  is invalid</p>
+            <label for="" class="label" >Status :</label>
+            <div class="radio">
+    <!--             <label for="">Status</label>
+     -->    
+                <label class="radioCon"><input class="radioInp" formControlName="status" type="radio" name="status" value="actif"> <span class="span">ACTIF</span></label>
+                <input formControlName="status" class="radioInp"  type="radio" name="status" value="inactif"> <span class="span">INACTIF</span>
+                <p *ngIf="status?.invalid && status?.touched" class="errMsg">This filed  is invalid</p>
+            </div>
+            
+            <label for="" class="label">Role :</label>
+            <select formControlName="profile_fk"  name="" id="">
+                <option disabled selected >Select Role</option>
+                <option  class="option" value="Admin">administrator</option>
+                <option class="option" value="Dev">Developer</option>
+                <p *ngIf="status?.invalid && status?.touched" class="errMsg">This filed  is invalid</p>
+            </select>
+    
+            <div class="formAction">
+                <button (click)="testSub()" class="sumbmit">Submit</button>
+                <button class="reset">Reset</button>
+            </div>
+        </form>
+        <div [class.d-none]="!loading" class="loading">
+            <div class="spinner">
+                <div></div>
+                <div></div>
+              </div>
         </div>
-    </form>
+    </div>
+
+
+    <div [class.d-none]="hide" class="showMesg">
+        <!--  <div class="imgC">                <img src="" alt="">
+         </div> -->
+         
+         <h2>The user has been successfully added
+            <i class="fa-regular fa-thumbs-up"></i>
+         </h2>
+         <div class="details">
+            <h4 class="title">User's credentials :</h4>
+            <div class="info">
+                <h5 class="'username">Username : {{userToCreat.user_name}} </h5>
+            <h5>Password : {{userToCreat.password}} </h5>
+            </div>
+         </div>
+         <button (click)="goBack()" class="back">Go back</button>
+     </div>
+
+
 </div>

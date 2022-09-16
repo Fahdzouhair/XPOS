@@ -5,3 +5,53 @@
     align-items:center;
     padding-bottom: 1rem;
 }
+
+.msgLogIn{
+    position: absolute;
+    top:7rem;
+    right:1.5rem;
+    z-index:1 ;
+    background:#7ddb70;
+    border-radius: 5px;
+    padding:5px 10px;
+}
+.msgLogIn>p{
+    font-size : 1rem;
+    color:#2C3333;
+    margin-bottom:0;
+}
+
+.animate{
+    animation:show_slide_i 1s ease-in-out forwards;
+}
+
+.hide{
+    animation:hide 1s ease-in-out forwards;
+}
+
+
+@keyframes show_slide_i {
+    0%{
+        transform: translateX(-15px);
+    }
+    40%{
+        transform: translateX(10px);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+    
+}
+
+@keyframes hide {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity:.7
+    }
+    100%{
+        opacity : 0;
+    }
+    
+}

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -20,6 +20,8 @@ import { AddDashboardUserComponent } from './views/add-dashboard-user/add-dashbo
 import { AppRoutingModule , routingComponent  } from './app-routing/app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthentificationComponent } from './authentification/authentification.component';
+import { NotFoundPageComponent } from './views/not-found-page/not-found-page.component';
+
 
 
 
@@ -33,13 +35,15 @@ import { AuthentificationComponent } from './authentification/authentification.c
     DashboardUserListComponent,
     TableComponent,
     AddDashboardUserComponent,
-    AuthentificationComponent
+    AuthentificationComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule

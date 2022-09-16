@@ -1,9 +1,8 @@
-<app-sidebar class="nav"></app-sidebar>
+<app-sidebar (eventEmitter)="signOut($event)" class="nav"></app-sidebar>
 <main>
     <header>
         <!-- Head stil empty for now -->
         <div class="header">
-            
         </div>
     </header>
 
@@ -11,4 +10,9 @@
         <li style="color: black" *ngFor="let item of myArray">{{item.Username}}</li>
         <router-outlet></router-outlet>
     </section>
+    <div [class.hide]='msgLog' class=" animate msgLogIn">
+        <p >
+            <i class="fa-regular fa-thumbs-up"></i>
+            You have been successfully logged in.</p>
+    </div>
 </main>
