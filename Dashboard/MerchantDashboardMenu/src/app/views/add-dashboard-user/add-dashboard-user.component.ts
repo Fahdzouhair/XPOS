@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs';
 import { Data } from 'src/app/Models/data';
 import { IUser } from 'src/app/Models/iuser';
-import { UserService } from 'src/app/services/user.service';
-import { User2Service } from 'src/app/services/user2.service';
+import { UserService } from '../../Services/user.service';
+import { User2Service } from '../../Services/user2.service';
 
 @Component({
   selector: 'app-add-dashboard-user',

@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { IUser } from '../Models/iuser';
-import { UserService } from '../services/user.service';
-import { User2Service } from '../services/user2.service';
+import { UserService } from '../Services/user.service';
+import { User2Service } from '../Services/user2.service';
+
+
 
 
 @Component({
@@ -19,7 +21,7 @@ export class DashboardComponent implements OnInit {
   myArray: any[] = [];
   msgLog?: boolean = false;
   time:number = 0;
-  constructor(private userService: UserService, private router: Router,private user2S:User2Service,private afs:AngularFirestore) {
+  constructor(private userService: UserService, private router: Router,private user2S:User2Service) {
     
   }
 

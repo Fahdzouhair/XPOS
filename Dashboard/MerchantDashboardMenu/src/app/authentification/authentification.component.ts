@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../Services/user.service';
 
+
 @Component({
   selector: 'app-authentification',
   templateUrl: './authentification.component.html',

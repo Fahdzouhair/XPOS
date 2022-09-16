@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { IUser } from 'src/app/Models/iuser';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from '../../Services/user.service';
 
 @Component({
   selector: 'app-dashboard-user-list',
