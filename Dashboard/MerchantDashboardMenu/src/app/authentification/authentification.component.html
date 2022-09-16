@@ -1,3 +1,4 @@
+
 <div class="main-auth-container">
     <div class="card-container">
         <div class="card-header">
@@ -6,12 +7,17 @@
                 <img src="../../../assets/Logo_hps_0.png" width="50%" height="50%" alt="">
             </div>
         </div>
-    
+
+        <div [class.hideErr]="isErr" class="errMsg">
+            <p>{{ errMesg }}</p>
+        </div>
+
         <div class="card-body">
-            <label class="label">User code</label>
-            <input  class="userCodeInput" type="text">
+            <label  class="label">User code</label>
+            <input #userCode class="userCodeInput" type="text">
+          
             <label class="label">Password</label>
-            <input class="passwordInput" type="text">
+            <input #password class="passwordInput" type="password">
         </div>
     
         <div class="card-footer">
@@ -19,7 +25,7 @@
                 <a href="">Forgot password ?</a>
             </h5>
             <div class="submitBtnBlocl"> 
-                <button routerLink="/dashboard/analytics" class="submit">Submit
+                <button (click)="logIn(userCode.value,password.value)" class="submit">Submit
                     <i class="fa-solid check fa-check"></i>
                    <!--  <span>
                         <img src="../../../assets/check.png" width="15px" height="15px"alt="">

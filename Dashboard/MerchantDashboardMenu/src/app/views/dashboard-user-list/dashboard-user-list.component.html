@@ -20,8 +20,54 @@
 
         </div>
         <div class="tableData-container">
-            <app-table [data_]="tableData"></app-table>
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <th>User_code</th>
+                            <th>Username</th>
+                            <th>Status</th>
+                            <th>Role</th>
+                            <th>Edit User</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <div *ngIf="!isEmptyData() ;then DataBlock ;else elseBlock"></div>
+                    <ng-template #elseBlock>
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center;font-size: 1rem;">No Data !</td>
+                            </tr>
+                           
+                        </tbody>
+                    </ng-template>
+                    <ng-template #DataBlock>
+                        <tbody>
+                            <tr *ngFor="let user of usersData">
+                                <td>{{user.user_code}}</td>
+                                <td>{{user.user_name}}</td>
+                                <td>{{user.status}}</td>
+                                <td>{{user.profile_fk}}</td>
+                                <td (click)="edit(user)" class="editC"><button class="btnEdit">
+                                    <i class="fa-solid edit fa-user-pen"></i>Edit
+                                </button></td>
+                            </tr>
+                            <!-- <tr *ngFor="let obj of tabValue">
+                                <td *ngFor="let val of obj | keyvalue ">
+                                   {{ val.value }}
+                                </td>
+                            </tr> -->
+                           
+                        </tbody>
+                    </ng-template>
+                </table>
+            </div>
         </div>
+        <!-- FORMS TO EDIT A USER  -->
+        
     </div>
 </ng-template>
 
@@ -30,7 +76,42 @@
 <!--********************************************************-->
 <ng-template #learnBlock>
 
-    <div *ngIf="hide ;then thenBlock ;else elseBlock"></div>
+
+    <div style="color:#fff" class="add-dashboard-user-Container">
+            
+            <form  class="formCard">
+                <div  class="nestedForm">
+                    <label class="firstname" for="">First Name :</label>
+                    <input type="text" class="inputText"  placeholder="First name" />
+                    <label class="lastname" for="">Last Name :</label>
+                    <input type="text" class="inputText"  placeholder="Last name" />
+                </div>
+                <label for="">User_code :</label>
+                <input type="text" class="inputText" placeholder="User_code" />
+                <label for="">Password :</label>
+                <input type="password" class="inputPass" placeholder="Password" />
+                <label for="">Status :</label>
+                <div class="radio">
+        <!--             <label for="">Status</label>
+         -->    
+                    <input  type="radio" name="status" value="actif"> <span class="span">ACTIF</span>
+                    <input  type="radio" name="status" value="inactif"> <span class="span">INACTIF</span>
+                </div>
+                <label for="">Role :</label>
+                <select   name="" id="">
+                    <option disabled selected>Select Role</option>
+                    <option  class="option" value="Admin">administrator</option>
+                    <option class="option" value="Dev">Developer</option>
+                </select>
+        
+                <div class="formAction">
+                    <button  class="sumbmit">Edit</button>
+                    <button class="reset">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+   <!--  <div *ngIf="hide ;then thenBlock ;else elseBlock"></div>
 
     <ng-template #thenBlock>
         <h2>then Block</h2>
@@ -40,7 +121,7 @@
             <h2 *ngSwitchCase=3>3</h2>
             <h2 *ngSwitchDefault>Pick again</h2>
         </div>
-        <!-- ngForDirective -->
+    
         <div *ngFor="let color of colorTable ; index as i ; first as f ; even as e">
             <h2>{{f}} {{e}} {{color + " " +i}}</h2>
         </div>
@@ -49,9 +130,9 @@
     <ng-template #elseBlock>
         <input #myInput [(ngModel)]="fromHtmltoClass" type="text" />
 
-        <button (click)="fire($event)">read</button>
+      
         <h2>{{ fromHtmltoClass }}</h2>
     </ng-template>
-
+ -->
 
 </ng-template>

@@ -11,6 +11,7 @@ Chart.register(...registerables);
 })
 export class AnalyticsComponent implements OnInit {
 
+ date = new Date().toISOString().split('T')[0];
 
   constructor() { }
 
@@ -23,7 +24,7 @@ export class AnalyticsComponent implements OnInit {
           datasets: [{
               label: '',
               data: [10, 3 , 5],
-              backgroundColor : ["yellow", "green","red"],
+              backgroundColor : ["GRAY", "green","red"],
              
           }]
       },

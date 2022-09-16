@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,7 +13,13 @@ export class SidebarComponent implements OnInit {
     "show":false,
     "animated":true
   };
-  constructor() { }
+
+  @Output() public eventEmitter = new EventEmitter();
+
+
+  constructor(private userService: UserService,private auth:AngularFireAuth) { 
+   
+   }
 
   ngOnInit(): void {
   }
@@ -20,5 +28,8 @@ export class SidebarComponent implements OnInit {
     this.mesg.show = !this.mesg.show;
     this.rotate = !this.rotate;
 
+  }
+  logOut(arg:any){
+    this.eventEmitter.emit();
   }
 }

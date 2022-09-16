@@ -9,7 +9,12 @@ export class TableComponent implements OnInit {
 
   
 
-  @Input()  data_:any =[] ;
+  @Input()  data_:any =[ {
+    "firstname" : "fahd",
+    "lastname" : "zouhair",
+    "email" : "fahd@gmail.com"
+  }] ;
+  @Input() count: string = '';
   
 
   public tableData = [];
@@ -19,15 +24,12 @@ export class TableComponent implements OnInit {
 
   constructor() {
     
-   
-    
    }
  
   ngOnInit(): void {
-    //this.getData(this.data_);
+    
   }
   ngOnChanges(changes: any): void {
-    //console.log(changes);
       if(changes?.data_?.currentValue ){
         this.getData(this.data_);
       }

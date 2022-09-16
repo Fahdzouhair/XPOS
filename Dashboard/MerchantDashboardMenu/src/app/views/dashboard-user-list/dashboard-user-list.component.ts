@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { IUser } from 'src/app/Models/iuser';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-dashboard-user-list',
@@ -12,25 +14,45 @@ export class DashboardUserListComponent implements OnInit {
   public hide:boolean = true;
   public number:number = 1;
   public colorTable = ['red','yellow','green'];
-
+  public display=true;
   public tableData = [
     {
-      "User Name": "test",
-      "Status ID": "ahmed",
-      "Edit Status ID": "ibrahim",
-      "Role": "test",
-      "Edit User": "testhjjh"
+      "Username": "",
+      "Status": "",
+      "Edit Status": "",
+      "Role": "",
+      "Edit User": ""
     }
   ];
- 
-
-  constructor() { }
-
-  ngOnInit(): void {
+   usersData ?: Array<IUser> = [];
+  constructor(private userService: UserService) { 
+    
   }
 
-  fire(event:any){
-    //console.log(event);
-   // this.msg=event;
+  ngOnInit(): void {
+    this.getUsersData();
+    
+  }
+
+  ngOnChanges(changes?: any): void {
+  }
+
+   getUsersData(){
+    this.userService.getUsers()
+                    .subscribe(data => 
+                      {this.usersData = data
+                      //console.table(data);
+                    }
+                      );
+  } 
+
+
+  isEmptyData(): boolean{
+    return this.usersData!.length === 0 ;
+  }
+
+  edit(user:any){
+    this.work = !this.work; 
+    console.log(user);
   }
 }
